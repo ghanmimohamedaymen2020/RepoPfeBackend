@@ -8,17 +8,21 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
-@Table(name = "D_TFJ")
+@Table(name = "fjo_stat1")
 public class ListeDTfj {
 	
 	@Id
     private String	PROG ;
-	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date DCO ;	
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date DATD ;	
-	private String  HEURD ;	
+	private String  HEURD ;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date DATF ;	
 	private String HEURF ;	
 	private String DUREE ;	

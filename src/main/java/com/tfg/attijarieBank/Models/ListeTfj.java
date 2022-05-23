@@ -1,5 +1,6 @@
 package com.tfg.attijarieBank.Models;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
 @Table(name = "TFJ")
@@ -18,19 +21,20 @@ public class ListeTfj {
 	
 
 	
-	private String T_TOT;
+	private java.sql.Time T_TOT;
 		
-	private String T_HI;
+	private java.sql.Time  T_HI;
 	private Long  NMVT;
 	@Id
-	private  Date DCO	;
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private  java.sql.Date DCO	;
 	
 	@OneToMany(mappedBy = "listeTFJ")
-	private List<ListeDTfj> listeDetailTfj = new ArrayList<>() ;
+	private List<ListeDTfj> listeDetailTfj = new ArrayList<>() ; 
 	
 
 
-	public ListeTfj(String t_TOT, String t_HI, Long nMVT, Date dCO, Set<ListeDTfj> listeDetailTFJs) {
+	public ListeTfj(Time t_TOT, Time t_HI, Long nMVT, java.sql.Date dCO, Set<ListeDTfj> listeDetailTFJs) {
 		super();
 		T_TOT = t_TOT;
 		T_HI = t_HI;
@@ -49,27 +53,27 @@ public class ListeTfj {
 	}
 
 
-	public void setDCO(Date dCO) {
+	public void setDCO(java.sql.Date dCO) {
 		DCO = dCO;
 	}
 
 
-	public String getT_TOT() {
+	public Time getT_TOT() {
 		return T_TOT;
 	}
 
 
-	public void setT_TOT(String t_TOT) {
+	public void setT_TOT(Time t_TOT) {
 		T_TOT = t_TOT;
 	}
 
 
-	public String getT_HI() {
+	public Time getT_HI() {
 		return T_HI;
 	}
 
 
-	public void setT_HI(String t_HI) {
+	public void setT_HI(Time t_HI) {
 		T_HI = t_HI;
 	}
 

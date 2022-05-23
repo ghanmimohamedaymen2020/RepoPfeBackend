@@ -13,8 +13,7 @@ public class FicheIntevention {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id ;
-	
-private String	PROG ;
+private java.lang.String	PROG ;
 
 private String Constats  ;
 private String DetailInvestigations ;
@@ -24,31 +23,10 @@ private String DureeIncident ;
 private String actionsRealisees ;
 private String StatutResolution ;
 
-private Intevenat intevenate;
 
 
 
 
-
-public FicheIntevention(int id, String pROG, String constats, String detailInvestigations, String causeIncident,
-		String consequencesIncident, String dureeIncident, String actionsRealisees, String statutResolution,
-		Intevenat intevenate) {
-
-	this.id = id;
-	PROG = pROG;
-	Constats = constats;
-	DetailInvestigations = detailInvestigations;
-	CauseIncident = causeIncident;
-	ConsequencesIncident = consequencesIncident;
-	DureeIncident = dureeIncident;
-	this.actionsRealisees = actionsRealisees;
-	StatutResolution = statutResolution;
-	this.intevenate = intevenate;
-}
-
-public FicheIntevention() {
-	
-}
 
 public int getId() {
 	return id;
@@ -57,6 +35,26 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
+
+public FicheIntevention(  int id ,String pROG, String constats, String detailInvestigations, String causeIncident,
+		String consequencesIncident, String dureeIncident, String actionsRealisees, String statutResolution
+		) {
+
+    this.id = id ;
+	PROG = pROG;
+	Constats = constats;
+	DetailInvestigations = detailInvestigations;
+	CauseIncident = causeIncident;
+	ConsequencesIncident = consequencesIncident;
+	DureeIncident = dureeIncident;
+	this.actionsRealisees = actionsRealisees;
+	StatutResolution = statutResolution;
+}
+
+public FicheIntevention() {
+	
+}
+
 
 public String getPROG() {
 	return PROG;
@@ -122,13 +120,6 @@ public void setStatutResolution(String statutResolution) {
 	StatutResolution = statutResolution;
 }
 
-public Intevenat getIntevenate() {
-	return intevenate;
-}
-
-public void setIntevenate(Intevenat intevenate) {
-	this.intevenate = intevenate;
-}
 
 
 

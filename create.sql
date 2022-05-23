@@ -1,0 +1,8 @@
+create table fiche_intevention (id integer not null auto_increment, cause_incident varchar(255), consequences_incident varchar(255), constats varchar(255), detail_investigations varchar(255), duree_incident varchar(255), prog varchar(255), statut_resolution varchar(255), actions_realisees varchar(255), primary key (id)) engine=InnoDB;
+create table fjo_stat1 (prog varchar(255) not null, datd datetime(6), datf datetime(6), dco datetime(6), duree varchar(255), etape bit, heurd varchar(255), heurf varchar(255), liste_tfj_id datetime(6), primary key (prog)) engine=InnoDB;
+create table tfj (dco datetime(6) not null, nmvt bigint, t_hi varchar(255), t_tot varchar(255), primary key (dco)) engine=InnoDB;
+alter table fjo_stat1 add constraint FKsnlbgujeeyvuxceyo62a9s899 foreign key (liste_tfj_id) references tfj (dco);
+create table fiche_intevention (id integer not null auto_increment, cause_incident varchar(255), consequences_incident varchar(255), constats varchar(255), detail_investigations varchar(255), duree_incident varchar(255), prog varchar(255), statut_resolution varchar(255), actions_realisees varchar(255), primary key (id)) engine=InnoDB;
+create table fjo_stat1 (prog varchar(255) not null, datd datetime(6), datf datetime(6), dco datetime(6), duree varchar(255), etape bit, heurd varchar(255), heurf varchar(255), liste_tfj_id datetime(6), primary key (prog)) engine=InnoDB;
+create table tfj (dco datetime(6) not null, nmvt bigint, t_hi varchar(255), t_tot varchar(255), primary key (dco)) engine=InnoDB;
+alter table fjo_stat1 add constraint FKsnlbgujeeyvuxceyo62a9s899 foreign key (liste_tfj_id) references tfj (dco);
