@@ -20,13 +20,16 @@ import com.tfg.attijarieBank.Models.FicheIntevention;
 import com.tfg.attijarieBank.Repository.FicheInterventionRepository;
 import com.tfg.attijarieBank.exception.ResourceNotFoundException;
 
+
 @RestController
 @CrossOrigin(origins = "*")
 
+
 public class FicheInteventionController {
 	
-	@Autowired
+@Autowired	
 	private FicheInterventionRepository ficheInterventionRepository ;
+
 	
 	
 /*	public FicheIntevention findByName(String PROG) {
